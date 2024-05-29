@@ -1,0 +1,7 @@
+{
+  "name": "Calculadora_Simulacion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

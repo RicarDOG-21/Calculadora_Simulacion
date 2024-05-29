@@ -1,0 +1,39 @@
+<ion-header class="header">
+    <h1 class="title">
+      CALCU.
+    </h1>
+    <svg id="Layer_1" class="logo" height="512" viewBox="0 0 24 24" width="512" fill="#b84aeb" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+      <path d="m18 24h-12a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h12a5.006 5.006 0 0 1 5 5v14a5.006 5.006 0 0 1 -5 5zm-12-22a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-14a3 3 0 0 0 -3-3zm10 8h-8a3 3 0 0 1 0-6h8a3 3 0 0 1 0 6zm-8-4a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm-2 7a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm-8 4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm8-4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm1 5a1 1 0 0 0 -1-1h-4a1 1 0 0 0 0 2h4a1 1 0 0 0 1-1z"/>
+    </svg>
+</ion-header>
+
+<ion-content class="main-bg">
+  <section class="calc-section">
+    <div class="calc-layout"></div>
+    <h2>Calculadora</h2>
+    <p>Seleccione una opcion:</p>
+    <div class="calc-option">
+      <button id="cl" type="button" class="btn-option">Con Limite</button>
+      <button id="sl" type="button" class="btn-option">Sin Limite</button>
+    </div>
+  </section>
+  <section class="param-section">
+    <h2>Parametros</h2>
+    <div class="inputs-general">
+      <div class="input-group">
+        <span id="lamdaspan" class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="text" id="lamda" class="form-control" placeholder="Ingrese Lamda" aria-label="Username" aria-describedby="basic-addon1">
+        <span id="muspan"  class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="text" id="mu" class="form-control" placeholder="Ingrese Mu" aria-label="Username" aria-describedby="basic-addon1">
+        <span id="cspan"  class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="text" id="c" class="form-control" placeholder="Ingrese C" aria-label="Username" aria-describedby="basic-addon1">
+        <span id="nspan"  class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="text" id="n" class="form-control" placeholder="Ingrese Limite de la Cola" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div class="result-btns">
+      <button id="calc" type="button" class="btn-option">Calcular</button>
+    </div>
+    <div class="purple-line"></div>
+  </section>
+</ion-content>
