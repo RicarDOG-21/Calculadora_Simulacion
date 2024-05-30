@@ -7,7 +7,7 @@
     </svg>
 </ion-header>
 
-<ion-content class="main-bg">
+<ion-content class="main-bg" onload="init();">
   <section class="calc-section">
     <div class="calc-layout"></div>
     <h2>Calculadora</h2>
@@ -25,8 +25,8 @@
         <input type="text" id="lamda" class="form-control" placeholder="Ingrese Lamda" aria-label="Username" aria-describedby="basic-addon1">
         <span id="muspan"  class="input-group-text" id="basic-addon1">&#64;</span>
         <input type="text" id="mu" class="form-control" placeholder="Ingrese Mu" aria-label="Username" aria-describedby="basic-addon1">
-        <span id="cspan"  class="input-group-text" id="basic-addon1">&#64;</span>
-        <input type="text" id="c" class="form-control" placeholder="Ingrese C" aria-label="Username" aria-describedby="basic-addon1">
+        <!-- <span id="cspan"  class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="text" id="c" class="form-control" placeholder="Ingrese C" aria-label="Username" aria-describedby="basic-addon1"> -->
         <span id="nspan"  class="input-group-text" id="basic-addon1">&#64;</span>
         <input type="text" id="n" class="form-control" placeholder="Ingrese Limite de la Cola" aria-label="Username" aria-describedby="basic-addon1">
       </div>
@@ -35,5 +35,14 @@
       <button id="calc" type="button" class="btn-option">Calcular</button>
     </div>
     <div class="purple-line"></div>
+  </section>
+  <section class="results-section">
+    <table class="table table-borderless table-success table-striped">
+      <tbody id="resultadoF" colspan="12"></tbody>
+    </table>
+    <hr class="gray-line">
+    <table class="table table-success table-striped">
+      <tbody id="tablaPN"></tbody>
+    </table>
   </section>
 </ion-content>

@@ -1,3 +1,111 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+    <ion-header class="header">
+      <h1 class="title">
+        CALCU.
+      </h1>
+      <svg id="Layer_1" class="logo" height="512" viewBox="0 0 24 24" width="512" fill="#b84aeb" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+        <path d="m18 24h-12a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h12a5.006 5.006 0 0 1 5 5v14a5.006 5.006 0 0 1 -5 5zm-12-22a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-14a3 3 0 0 0 -3-3zm10 8h-8a3 3 0 0 1 0-6h8a3 3 0 0 1 0 6zm-8-4a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm-2 7a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm-8 4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm8-4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm1 5a1 1 0 0 0 -1-1h-4a1 1 0 0 0 0 2h4a1 1 0 0 0 1-1z"/>
+      </svg>
+  </ion-header>
+  
+  <ion-app>
+    <ion-router-outlet>
+      <ion-header class="header">
+        <h1 class="title">
+          CALCU.
+        </h1>
+        <svg id="Layer_1" class="logo" height="512" viewBox="0 0 24 24" width="512" fill="#b84aeb" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+          <path d="m18 24h-12a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h12a5.006 5.006 0 0 1 5 5v14a5.006 5.006 0 0 1 -5 5zm-12-22a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-14a3 3 0 0 0 -3-3zm10 8h-8a3 3 0 0 1 0-6h8a3 3 0 0 1 0 6zm-8-4a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm-2 7a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm-8 4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm4 0a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm8-4a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm1 5a1 1 0 0 0 -1-1h-4a1 1 0 0 0 0 2h4a1 1 0 0 0 1-1z"/>
+        </svg>
+    </ion-header>
+    
+    <ion-content class="main-bg" onload="init();">
+      <section class="calc-section">
+        <div class="calc-layout"></div>
+        <h2>Calculadora</h2>
+        <p>Opciones disponibles:</p>
+        <div class="calc-option">
+          <p id="cl" type="button" class="btn-option">Con Limite</p>
+          <p id="sl" type="button" class="btn-option">Sin Limite</p>
+        </div>
+      </section>
+      <section class="param-section">
+        <h2>Sin Límite en Cola</h2>
+        <div class="input-group">
+          <label for="lamdaSl">Lamda (λ):</label>
+          <input class="form-control" id="lamdaSl" type="number" placeholder="Tasa de llegada (λ)">
+          <label for="muSl">Mu (μ):</label>
+          <input class="form-control" id="muSl" type="number" placeholder="Tasa de servicio (μ)">
+          <button class="btn-option" id="calcSl">Calcular</button>
+        </div>
+      
+        <h2>Resultados Sin Límite en Cola</h2>
+        <div class="tabla-scroll">
+          <table id="tablaSl">
+            <tr>
+              <th>Rho (ρ)</th>
+              <th>P0</th>
+              <th>Ls</th>
+              <th>Lq</th>
+              <th>Ws</th>
+              <th>Wq</th>
+            </tr>
+            <tr>
+              <td id="rhoSl">Na</td>
+              <td id="p0Sl">Na</td>
+              <td id="lsSl">Na</td>
+              <td id="lqSl">Na</td>
+              <td id="wsSl">Na</td>
+              <td id="wqSl">Na</td>
+            </tr>
+          </table>
+        </div>
+      
+        <h2>Con Límite en Cola</h2>
+        <div class="input-group">
+          <label for="lamdaCl">Lamda (λ):</label>
+          <input class="form-control" id="lamdaCl" type="number" placeholder="Tasa de llegada (λ)">
+          <label for="muCl">Mu (μ):</label>
+          <input class="form-control" id="muCl" type="number" placeholder="Tasa de servicio (μ)">
+          <!-- <label for="cCl">Límite (c):</label>
+          <input class="form-control" id="cCl" type="number" placeholder="Límite (c)"> -->
+          <label for="nCl">Clientes (n):</label>
+          <input class="form-control" id="nCl" type="number" placeholder="Clientes (n)">
+          <button class="btn-option" id="calcCl">Calcular</button>
+        </div>
+      
+        <h2>Resultados Con Límite en Cola</h2>
+        <div class="tabla-scroll">
+          <table id="tablaCl">
+            <tr>
+              <th>Rho (ρ)</th>
+              <th>P0</th>
+              <th>Ls</th>
+              <th>Lq</th>
+              <th>Ws</th>
+              <th>Wq</th>
+              <th>Lambda efectiva</th>
+              <th>Lambda perdida</th>
+            </tr>
+            <tr>
+              <td id="rhoCl">Na</td>
+              <td id="p0Cl">Na</td>
+              <td id="lsCl">Na</td>
+              <td id="lqCl">Na</td>
+              <td id="wsCl">Na</td>
+              <td id="wqCl">Na</td>
+              <td id="lambdaEfCl">Na</td>
+              <td id="lambdaPerCl">Na</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </ion-content>
+    </ion-router-outlet>
+  </ion-app>
+  
+  </ion-router-outlet>
 </ion-app>
+
+
